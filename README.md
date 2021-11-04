@@ -1,3 +1,3 @@
-# Robiots dotfiles :)
+# Robiots i3wm dotfiles
 
-[Example](https://raw.githubusercontent.com/robiot/dotfiles/main/.github/example.png)
+<img src="https://github.com/robiot/dotfiles/raw/main/.github/example.png" />
