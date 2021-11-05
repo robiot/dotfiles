@@ -209,3 +209,6 @@ exec_always $no-startup-id-flag $HOME/.config/polybar/launch.sh --shapes
 exec $no-startup-id-flag  /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec $no-startup-id-flag xcape -t 150 -e 'Super_L=Super_L|Escape;Super_R=Super_R|Tab'
 exec_always $no-startup-id-flag /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# Login keyring
+exec $no-startup-id-flag /usr/bin/gnome-keyring-daemon --start --components=ssh,secrets,pkcs11
