@@ -1,0 +1,1 @@
+/home/robiot/.config/i3
