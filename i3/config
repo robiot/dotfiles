@@ -203,7 +203,7 @@ for_window [class   = "rofi"] floating enable sticky enable
 #for_window [class   = "Indicator-stickynotes"] floating enable
 #for_window [class   = "Lxappearance"] floating enable
 #for_window [title   = "\bopencvimage\b"] floating enable
-
+for_window [class="*" window_role="pop-up"] floating enable
 
 #
 #Start

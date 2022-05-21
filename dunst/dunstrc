@@ -1,23 +1,27 @@
-[global]
+[global]:
 monitor = 0
 follow = mouse
-geometry = "300x60-20+48"
+;geometry = "400x60-20+408"
+width = 400
+;height = 120
+origin = top-center
+
 indicate_hidden = yes
 shrink = no
 # separator_height = 10
 padding = 32
 horizontal_padding = 32
-frame_width = 2
+frame_width = 0
 sort = no
 idle_threshold = 120
-font = rissole 8
+font = Iosevka Nerd Font Mono 10
 line_height = 4
 markup = full
 format = %s\n%b
 alignment = left
 show_age_threshold = 60
 word_wrap = yes
-corner_radius = 8
+corner_radius = 10
 ignore_newline = no
 stack_duplicates = false
 hide_duplicate_count = yes
@@ -32,18 +36,18 @@ class = Dunst
 
 [urgency_low]
 timeout = 4
-background = "#0b0f1a"
+background = "#101012"
 foreground = "#eeeeee"
 frame_color = "#8bc34a"
 
 [urgency_normal]
-timeout = 8
-background = "#0b0f1aB1"
+timeout = 5
+background = "#101012"
 foreground = "#eeeeee"
 frame_color = "#595a5e"
 
 [urgency_critical]
-timeout = 0
-background = "#0b0f1a"
+timeout = 5
+background = "#101012"
 foreground = "#eeeeee"
 frame_color = "#ff7043"
