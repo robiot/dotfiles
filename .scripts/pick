@@ -1,0 +1,15 @@
+#!/bin/sh -eu
+
+if ! command -v grabc >/dev/null 2>&1; then
+	echo "Binary 'grabc' not available"
+	exit 1
+fi
+
+if ! command -v xclip >/dev/null 2>&1; then
+	echo "Binary 'xclip' not available"
+	exit 1
+fi
+
+color="$( grabc )"
+
+echo "${color}" | xclip -sel clip

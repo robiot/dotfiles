@@ -80,6 +80,9 @@ bindsym --release $mod+L exec $no-startup-id-flag slock
 # Take a screenshot
 bindsym $mod+Shift+S exec $no-startup-id-flag flameshot gui
 
+# Take a fullscreen screenshot
+bindsym Print exec $no-startup-id-flag flameshot full -c
+
 # Get color, pick script needed (xclip, grabc)
 bindsym --release $mod+Shift+X exec ~/.scripts/pick
 
@@ -205,12 +208,13 @@ for_window [class   = "rofi"] floating enable sticky enable
 #
 #Start
 #
+exec_always $no-startup-id-flag $HOME/.config/polybar/launch.sh
 exec $no-startup-id-flag nitrogen --restore
+exec $no-startup-id-flag sh -c 'xrandr --output DP-1 --mode 1920x1080 --rate 144.01'
+
 exec $no-startup-id-flag dunst &
-#exec_always $no-startup-id-flag picom --config $HOME/.config/picom.conf
 exec_always $no-startup-id-flag picom --experimental-backends --backend glx --xrender-sync-fence --config $HOME/.config/picom.conf
 
-exec_always $no-startup-id-flag $HOME/.config/polybar/launch.sh --shapes
 exec $no-startup-id-flag  /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec $no-startup-id-flag xcape -t 150 -e 'Super_L=Super_L|Escape;Super_R=Super_R|Tab'
 exec_always $no-startup-id-flag /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
