@@ -69,7 +69,7 @@ set $no-startup-id-flag --no-startup-id
 bindsym $mod+Return exec $no-startup-id-flag alacritty
 
 # Rofi drun menu
-bindsym $mod+Escape exec --no-startup-id ~/.config/rofi/launcher/launcher.sh
+bindsym $mod+space exec --no-startup-id ~/.config/rofi/launcher/launcher.sh
 
 # Power menu
 bindsym $mod+P exec $no-startup-id-flag ~/.config/rofi/applets/powermenu.sh
@@ -105,7 +105,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+c reload
 
 # Toggle focus mode (floating or tiled)
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # Toggle between floating and tiling state
 bindsym $mod+Shift+space floating toggle
@@ -196,8 +196,6 @@ mode "$mode_gaps" {
     bindsym Return mode "default"
 }
 
-
-
 # Open specific applications in floating (+ sticky) mode
 for_window [class   = "rofi"] floating enable sticky enable
 #for_window [class   = "Indicator-stickynotes"] floating enable
@@ -216,7 +214,7 @@ exec $no-startup-id-flag dunst &
 exec_always $no-startup-id-flag picom --experimental-backends --backend glx --xrender-sync-fence --config $HOME/.config/picom.conf
 
 exec $no-startup-id-flag  /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-exec $no-startup-id-flag xcape -t 150 -e 'Super_L=Super_L|Escape;Super_R=Super_R|Tab'
+#exec $no-startup-id-flag xcape -t 150 -e 'Super_L=Super_L|Escape;Super_R=Super_R|Tab'
 exec_always $no-startup-id-flag /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Login keyring

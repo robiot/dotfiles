@@ -13,7 +13,6 @@ window:
     x: 16
     y: 16
 
-
 # Class (window name)
 class:
   instance: Alacritty

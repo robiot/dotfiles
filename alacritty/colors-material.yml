@@ -11,7 +11,7 @@ colors:
     text:   CellForeground
     cursor: '#bfc9db'
   bright:
-    black:   '#2e3136'
+    black:   '#101012'
     red:     '#cf6679'
     green:   '#a5d6a7'
     yellow:  '#ffecb3'
@@ -20,7 +20,7 @@ colors:
     cyan:    '#70c0b1'
     white:   '#858893'
   normal:
-    black:   '#2e3136'
+    black:   '#101012'
     red:     '#cf6679'
     green:   '#181820'
     yellow:  '#fff59d'
