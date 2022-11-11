@@ -5,10 +5,10 @@ for_window [class   = ".*"] title_format "%title  ⋯  %class"
 title_align center
 
 # Default
-gaps inner 10
-gaps outer 10
-gaps top 10
-gaps bottom 10
+# gaps inner 10
+# gaps outer 10
+# gaps top 10
+# gaps bottom 10
 
 # Big gaps
 # gaps inner 30
@@ -19,12 +19,13 @@ gaps bottom 10
 
 for_window [class   = "^.*"] border pixel 1
 for_window [title   = "^.*"] border pixel 1
+for_window [title="^Android Emulator*"] border pixel 0
 new_window 1pixel
 
 default_border pixel 1
 default_floating_border pixel 1
 
-border_radius 10
+# border_radius 10
 
 # smart_borders on
 # smart_gaps on
@@ -84,7 +85,7 @@ bindsym $mod+Shift+S exec $no-startup-id-flag flameshot gui
 bindsym Print exec $no-startup-id-flag flameshot full -c
 
 # Get color, pick script needed (xclip, grabc)
-bindsym --release $mod+Shift+X exec ~/.scripts/pick
+bindsym --release $mod+Shift+X exec ~/.scripts/xpick
 
 
 #
@@ -184,23 +185,13 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
-#Gap size increase/decrease bind mode
-set $mode_gaps Gaps: [ UP ] increase, or [ DOWN ] decrease
-bindsym $mod+g mode "$mode_gaps"
-
-mode "$mode_gaps" {
-    bindsym Up gaps inner current plus 5
-    bindsym Down gaps inner current minus 5
-    
-    bindsym Escape mode "default"
-    bindsym Return mode "default"
-}
-
 # Open specific applications in floating (+ sticky) mode
 for_window [class   = "rofi"] floating enable sticky enable
 #for_window [class   = "Indicator-stickynotes"] floating enable
 #for_window [class   = "Lxappearance"] floating enable
 #for_window [title   = "\bopencvimage\b"] floating enable
+#for_window [class   = "Lxappearance"] floating enable
+for_window [title="^Android Emulator*"] floating enable
 for_window [class="*" window_role="pop-up"] floating enable
 
 #
@@ -214,7 +205,6 @@ exec $no-startup-id-flag dunst &
 exec_always $no-startup-id-flag picom --experimental-backends --backend glx --xrender-sync-fence --config $HOME/.config/picom.conf
 
 exec $no-startup-id-flag  /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-#exec $no-startup-id-flag xcape -t 150 -e 'Super_L=Super_L|Escape;Super_R=Super_R|Tab'
 exec_always $no-startup-id-flag /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Login keyring
